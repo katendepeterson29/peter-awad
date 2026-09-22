@@ -54,14 +54,15 @@
                     <p class="text-xs uppercase tracking-wider text-[#d97706] font-semibold">Send a message</p>
                     <h2 class="text-lg font-semibold mt-1 mb-6">We will reply to your campus email</h2>
 
-                    <form action="contact.html" method="get" class="space-y-4">
+                    <form action="{{ route('contact.store') }}" method="POST" class="space-y-4">
+                        @csrf
                         <div>
-                            <label for="name" class="block text-sm font-medium text-slate-600 mb-2">Full name</label>
-                            <input type="text" id="name" name="name" required minlength="2" placeholder="Aisha Namuli" class="input-field">
+                            <label for="full_name" class="block text-sm font-medium text-slate-600 mb-2">Full name</label>
+                            <input type="text" id="full_name" name="full_name" required minlength="2" placeholder="Aisha Namuli" class="input-field">
                         </div>
                         <div>
                             <label for="email" class="block text-sm font-medium text-slate-600 mb-2">Campus email</label>
-                            <input type="email" id="email" name="email" required placeholder="aisha.namuli@campus.ac.ug" class="input-field">
+                            <input type="email" id="email" name="campus_email" required placeholder="aisha.namuli@campus.ac.ug" class="input-field">
                         </div>
                         <div>
                             <label for="department" class="block text-sm font-medium text-slate-600 mb-2">Department</label>
