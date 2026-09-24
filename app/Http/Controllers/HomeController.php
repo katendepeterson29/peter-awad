@@ -19,6 +19,16 @@ class HomeController extends Controller
     {
         return view('contact');
     }
+
+    public function dashboard()
+    {
+        $contacts = Contact::all();
+        return view('dashboard', compact('contacts'));
+    }
+    public function register()
+    {
+        return view('register');
+    }
     /**
      * Show the form for creating a new resource.
      */

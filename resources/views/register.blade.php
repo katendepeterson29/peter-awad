@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create account — Campus Service Portal</title>
-    <link rel="icon" type="image/png" href="assets/img/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } };
-    </script>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="bg-white text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+@extends('layouts.main')
+@section('content')
     <!-- Start: Register -->
     <div class="flex-1 flex items-center justify-center p-4 bg-white">
         <div class="w-full max-w-md">
             <!-- Start: Brand -->
             <div class="flex justify-center mb-8">
-                <a href="index.html"><img src="assets/img/logo.png" alt="Campus Service Portal" class="h-16 w-16"></a>
+                <a href="{{ route('home')}}"><img src="assets/img/logo.png" alt="Campus Service Portal" class="h-16 w-16"></a>
             </div>
             <!-- End: Brand -->
 
@@ -34,7 +18,7 @@
                 </div>
 
                 <!-- Start: Register form -->
-                <form action="dashboard.html" method="get" class="space-y-4">
+                <form action="{{ route('dashboard') }}" method="get" class="space-y-4">
                     <div>
                         <label for="name" class="block text-sm font-medium text-slate-600 mb-2">Full name <span class="text-[#d97706]">*</span></label>
                         <input type="text" id="name" name="name" required minlength="2" autofocus placeholder="Aisha Namuli" class="input-field">
@@ -64,7 +48,7 @@
 
                 <p class="mt-6 text-center text-sm text-slate-500">
                     Already have an account?
-                    <a href="login.html" class="text-[#2563eb] hover:text-[#1d4ed8]">Sign in</a>
+                    <a href="{{ route('login')}}" class="text-[#2563eb] hover:text-[#1d4ed8]">Sign in</a>
                 </p>
             </div>
             <!-- End: Register card -->
@@ -82,6 +66,5 @@
         </div>
     </footer>
     <!-- End: Footer -->
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+
+@endsection
