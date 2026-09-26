@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in — Campus Service Portal</title>
-    <link rel="icon" type="image/png" href="assets/img/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } };
-    </script>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="bg-white text-slate-900 font-sans antialiased min-h-screen flex flex-col">
+@extends('layouts.main')
+@section('content')
     <!-- Start: Sign in -->
     <div class="flex-1 flex items-center justify-center p-4 bg-white">
         <div class="w-full max-w-md">
             <!-- Start: Brand -->
             <div class="flex justify-center mb-8">
-                <a href="index.html" class="inline-flex flex-col items-center gap-3">
+                <a href="{{ route('home') }}" class="inline-flex flex-col items-center gap-3">
                     <img src="assets/img/logo.png" alt="Campus Service Portal" class="h-16 w-16">
                     <span class="text-sm font-semibold text-slate-900">Campus Service Portal</span>
                 </a>
@@ -36,7 +20,7 @@
                 </div>
 
                 <!-- Start: Sign in form -->
-                <form action="dashboard.html" method="get" class="space-y-5">
+                <form action="{{ route('dashboard') }}" method="get" class="space-y-5">
                     <div>
                         <label for="email" class="block text-sm font-medium text-slate-600 mb-2">Campus email</label>
                         <div class="relative">
@@ -62,7 +46,7 @@
                             <input type="checkbox" name="remember" class="h-4 w-4 rounded border-slate-300 text-[#2563eb] focus:ring-[#2563eb]">
                             <span class="text-sm text-slate-500">Keep me signed in</span>
                         </label>
-                        <a href="forgot-password.html" class="text-sm font-medium text-[#2563eb] hover:text-[#1d4ed8]">Forgot password?</a>
+                        <a href="{{ route('forgot-password') }}" class="text-sm font-medium text-[#2563eb] hover:text-[#1d4ed8]">Forgot password?</a>
                     </div>
                     <button type="submit" class="w-full py-3 px-4 rounded-xl text-sm font-semibold text-white bg-[#2563eb] hover:bg-[#1d4ed8]">Sign in</button>
                 </form>
@@ -81,7 +65,7 @@
 
                 <p class="mt-6 text-center text-sm text-slate-500">
                     New here?
-                    <a href="register.html" class="text-[#2563eb] hover:text-[#1d4ed8]">Create an account</a>
+                    <a href="{{ route('register') }}" class="text-[#2563eb] hover:text-[#1d4ed8]">Create an account</a>
                 </p>
             </div>
             <!-- End: Sign in card -->
@@ -99,6 +83,4 @@
         </div>
     </footer>
     <!-- End: Footer -->
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+@endsection
