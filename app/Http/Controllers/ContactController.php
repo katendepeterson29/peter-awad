@@ -15,6 +15,12 @@ class ContactController extends Controller
         return view('contact');
     }
 
+    public function ContactList()
+    {
+        $contacts = Contact::all();
+        $contacts = Contact::select('fullname', 'department')->get();
+        return view('contact-list', compact('contacts'));
+    }
     /**
      * Show the form for creating a new resource.
      */
